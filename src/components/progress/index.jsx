@@ -36,7 +36,7 @@ const Progress = () => {
                 />
               </svg>
             </span>
-            <h3 className="font-medium leading-tight text-gray-700 hidden sm:block">
+            <h3 className="font-medium leading-tight text-gray-700 hidden sm:block cursor-pointer">
               Postcode
             </h3>
           </li>
@@ -58,13 +58,13 @@ const Progress = () => {
                 />
               </svg>
             </span>
-            <h3 className="font-medium leading-tight text-gray-700 hidden sm:block">
+            <h3 className="font-medium leading-tight text-gray-700 hidden sm:block cursor-pointer">
               Waste Type
             </h3>
           </li>
           <li className="mb-10 ms-6 min-h-6">
             <span className="absolute flex items-center justify-center w-5 h-5 bg-black rounded-full -start-3 ring-4 ring-white"></span>
-            <h3 className="font-bold leading-tight text-gray-700 hidden sm:block">
+            <h3 className="font-bold leading-tight text-gray-700 hidden sm:block cursor-pointer">
               Select Skip
             </h3>
           </li>
@@ -72,7 +72,7 @@ const Progress = () => {
             <span className="absolute flex items-center justify-center w-5 h-5 bg-gray-100 rounded-full -start-3 ring-4 ring-white">
               <FontAwesomeIcon icon={faFileAlt} className="permit-icon" />
             </span>
-            <h3 className="font-medium leading-tight text-gray-700 hidden sm:block">
+            <h3 className="font-medium leading-tight text-gray-700 hidden sm:block cursor-pointer">
               Permit Check
             </h3>
           </li>
@@ -80,7 +80,7 @@ const Progress = () => {
             <span className="absolute flex items-center justify-center w-5 h-5 bg-gray-100 rounded-full -start-3 ring-4 ring-white">
               <FontAwesomeIcon icon={faCalendarAlt} className="icon" />
             </span>
-            <h3 className="font-medium leading-tight text-gray-700 hidden sm:block">
+            <h3 className="font-medium leading-tight text-gray-700 hidden sm:block cursor-pointer">
               Choose Date
             </h3>
           </li>
@@ -88,7 +88,7 @@ const Progress = () => {
             <span className="absolute flex items-center justify-center w-5 h-5 bg-gray-100 rounded-full -start-3 ring-4 ring-white">
               <FontAwesomeIcon icon={faCreditCard} className="icon" />
             </span>
-            <h3 className="font-medium leading-tight text-gray-700 hidden sm:block">
+            <h3 className="font-medium leading-tight text-gray-700 hidden sm:block cursor-pointer">
               Payment
             </h3>
           </li>
