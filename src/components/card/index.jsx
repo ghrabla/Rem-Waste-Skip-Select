@@ -11,7 +11,7 @@ const Card = ({ data, isSelected, onSelect }) => {
     <div
       className={`w-full max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto cursor-pointer transition-all duration-200 ${
         isSelected
-          ? "bg-blue-50 ring-2 ring-blue-500 shadow-xl transform scale-105"
+          ? "bg-green-50 ring-2 ring-green-500 shadow-xl transform scale-105"
           : "bg-white hover:shadow-xl"
       }`}
       onClick={onSelect}
@@ -31,7 +31,7 @@ const Card = ({ data, isSelected, onSelect }) => {
           {size} yd
         </div>
         {isSelected && (
-          <div className="absolute top-3 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-2 py-0.5 rounded-full text-xs font-medium">
+          <div className="absolute top-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-2 py-0.5 rounded-full text-xs font-medium">
             Selected
           </div>
         )}
@@ -40,7 +40,7 @@ const Card = ({ data, isSelected, onSelect }) => {
         <div className="flex justify-between items-center">
           <h2
             className={`text-lg font-semibold ${
-              isSelected ? "text-blue-800" : "text-gray-800"
+              isSelected ? "text-green-800" : "text-gray-800"
             }`}
           >
             {postcode}
@@ -52,7 +52,7 @@ const Card = ({ data, isSelected, onSelect }) => {
           <button
             className={`px-4 py-1.5 text-sm rounded-full transition ${
               isSelected
-                ? "bg-blue-500 text-white hover:bg-blue-600"
+                ? "bg-green-500 text-white hover:bg-green-600"
                 : "bg-black text-white hover:bg-gray-900"
             }`}
           >

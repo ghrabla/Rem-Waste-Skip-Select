@@ -1,4 +1,4 @@
-const Checkout = ({ isOpen, selectedCount, onNext, onBack, onClose }) => {
+const Checkout = ({ isOpen, selectedCount, onClose, setSelectedCards }) => {
   if (!isOpen) return null;
 
   return (
@@ -26,13 +26,15 @@ const Checkout = ({ isOpen, selectedCount, onNext, onBack, onClose }) => {
 
           <div className="flex justify-center gap-4 w-50">
             <button
-              onClick={onBack}
+                onClick={() => {
+                    setSelectedCards(new Set());
+                    onClose();
+                }}
               className="bg-gray-100 text-gray-700 py-3 px-12 rounded-full font-medium hover:bg-gray-200 transition"
             >
-              Back
+              Cancel
             </button>
             <button
-              onClick={onNext}
               className="bg-black text-white py-3 px-12 rounded-full font-medium hover:bg-gray-900 transition"
             >
               Next
