@@ -1,16 +1,21 @@
-const Card = ({ data }) => {
+const Card = ({ data, isSelected, onSelect }) => {
   const {
     size,
     hire_period_days,
     price_before_vat,
-    vat,
     allowed_on_road,
-    allows_heavy_waste,
     postcode,
   } = data;
 
   return (
-    <div className="max-w-sm rounded-2xl overflow-hidden shadow-lg bg-white mx-auto">
+    <div
+      className={`w-full max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto cursor-pointer transition-all duration-200 ${
+        isSelected
+          ? "bg-blue-50 ring-2 ring-blue-500 shadow-xl transform scale-105"
+          : "bg-white hover:shadow-xl"
+      }`}
+      onClick={onSelect}
+    >
       <div className="relative">
         <img
           src={`https://yozbrydxdlcxghkphhtq.supabase.co/storage/v1/object/public/skips/skip-sizes/${size}-yarder-skip.jpg`}
@@ -25,27 +30,33 @@ const Card = ({ data }) => {
         <div className="absolute top-3 right-3 bg-white/70 px-2 py-0.5 rounded-full text-sm font-semibold">
           {size} yd
         </div>
+        {isSelected && (
+          <div className="absolute top-3 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-2 py-0.5 rounded-full text-xs font-medium">
+            Selected
+          </div>
+        )}
       </div>
-
       <div className="p-4">
         <div className="flex justify-between items-center">
-          <h2 className="text-lg font-semibold text-gray-800">{postcode}</h2>
-          {/* <span className="text-xs bg-gray-100 px-2 py-1 rounded-full">
-            {hire_period_days} days hire
-          </span> */}
+          <h2
+            className={`text-lg font-semibold ${
+              isSelected ? "text-blue-800" : "text-gray-800"
+            }`}
+          >
+            {postcode}
+          </h2>
         </div>
-        <p className="text-sm text-gray-500">
-          {/* £{price_before_vat} + VAT ({vat}%) */}
-          {hire_period_days} days hire{" "}
-        </p>
-
+        <p className="text-sm text-gray-500">{hire_period_days} days hire</p>
         <div className="flex justify-between items-center mt-3">
-          <span className="text-lg font-bold">
-            £{price_before_vat}{" "}
-            {/* <span className="text-sm font-normal text-gray-500">before VAT</span> */}
-          </span>
-          <button className="bg-black text-white px-4 py-1.5 text-sm rounded-full hover:bg-gray-900 transition">
-            Select
+          <span className="text-lg font-bold">£{price_before_vat}</span>
+          <button
+            className={`px-4 py-1.5 text-sm rounded-full transition ${
+              isSelected
+                ? "bg-blue-500 text-white hover:bg-blue-600"
+                : "bg-black text-white hover:bg-gray-900"
+            }`}
+          >
+            {isSelected ? "Selected" : "Select"}
           </button>
         </div>
       </div>
