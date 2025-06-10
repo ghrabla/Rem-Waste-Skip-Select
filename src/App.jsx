@@ -19,7 +19,7 @@ const App = () => {
         <div className="max-w-14 md:w-full md:max-w-72 border-r border-gray-200 my-4">
           <div className="flex items-end justify-between p-4 border-b border-gray-200">
             <div>
-              <span className="text-4xl font-normal mr-1">15%</span>
+              <span className="text-4xl font-normal mr-1">30%</span>
               <span className="text-sm text-gray-500"> Progressing</span>
             </div>
             <div>Cancel</div>
