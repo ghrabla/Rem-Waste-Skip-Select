@@ -16,28 +16,17 @@ I would like to thank the **Rem Waste** team for giving me the opportunity to mo
 - Added **green highlights** for validation feedback and call-to-action areas.
 - Simple and modern component-driven design.
 
-## 🧩 Project Structure
+### 📁 Project Structure
 
-src/
-├── assets/ # Static images or icons
-├── components/ # Reusable UI components (Card, Loader, Header, etc.)
-├── data/ # Redux slices and store configuration
-│ └── actions/ # Feature-based slice organization
-├── App.jsx # Main application component
-├── index.js # Entry point of the app
-└── styles/ # Tailwind and custom styling
-
-Directory Overview
-
-assets/ - Contains static files such as images, icons, and other media resources
-components/ - Houses reusable UI components like Card, Loader, Header, and other shared components
-data/ - Contains Redux store configuration and state management
-
-actions/ - Organized by feature-specific Redux slices for better maintainability
-
-App.jsx - The main application component that serves as the root of the component tree
-index.js - Application entry point where React is rendered to the DOM
-styles/ - Contains Tailwind CSS configuration and custom styling files
+- **src/**
+  - **assets/** — Static files such as images, icons, and other media resources
+  - **components/** — Reusable UI components like `Card`, `Loader`, `Header`, and other shared components
+  - **data/** — Redux store configuration and state management
+    - **actions/** — Feature-specific Redux slices for better maintainability
+    - **store/** _ Holds the Redux slices for state management; currently includes one slice in this project
+  - **styles/** — Tailwind CSS configuration and custom styling files
+  - **App.jsx** — Main application component, root of the component tree
+  - **index.js** — Application entry point where React is rendered to the DOM
 
 ## ⚙️ Current Features
 
