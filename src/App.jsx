@@ -10,22 +10,9 @@ import Checkout from "./components/checkout";
 const App = () => {
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector((state) => state.skips);
-  const [selectedCards, setSelectedCards] = useState(new Set());
-  const [showModal, setShowModal] = useState(false);
-
-  const handleCardSelect = (cardId) => {
-    const newSelected = new Set(selectedCards);
-    if (newSelected.has(cardId)) {
-      newSelected.delete(cardId);
-    } else {
-      newSelected.add(cardId);
-    }
-    setSelectedCards(newSelected);
-    setShowModal(newSelected.size > 0);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
+  const [selectedCard, setSelectedCard] = useState(null);
+  const onSelect = (skip) => {
+    selectedCard?.id === skip.id ? setSelectedCard(null) : setSelectedCard(skip);
   };
 
   useEffect(() => {
@@ -52,8 +39,8 @@ const App = () => {
                 <Card
                   key={index}
                   data={skip}
-                  isSelected={selectedCards.has(skip.id)}
-                  onSelect={() => handleCardSelect(skip.id)}
+                  isSelected={selectedCard?.id == skip.id}
+                  onSelect={() => onSelect(skip)}
                 />
               ))}
             </div>
@@ -61,12 +48,7 @@ const App = () => {
         </div>
       </div>
 
-      <Checkout
-        isOpen={showModal}
-        selectedCount={selectedCards.size}
-        setSelectedCards={setSelectedCards}
-        onClose={handleCloseModal}
-      />
+      <Checkout isOpen={selectedCard} setSelectedCard={setSelectedCard} selectedCard={selectedCard} />
     </div>
   );
 };

@@ -30,11 +30,7 @@ const Card = ({ data, isSelected, onSelect }) => {
         <div className="absolute top-3 right-3 bg-white/70 px-2 py-0.5 rounded-full text-sm font-semibold">
           {size} yd
         </div>
-        {isSelected && (
-          <div className="absolute top-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-2 py-0.5 rounded-full text-xs font-medium">
-            Selected
-          </div>
-        )}
+      
       </div>
       <div className="p-4">
         <div className="flex justify-between items-center">
