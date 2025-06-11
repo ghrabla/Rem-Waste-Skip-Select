@@ -34,7 +34,7 @@ const App = () => {
 
   return (
     <div className="xl:container mx-auto">
-      <div className="flex">
+      <div className="">
         <Progress />
         <div className="my-4 p-4 bg-white ml-16 md:ml-80 lg:ml-80 xl:ml-80">
           <Header />
